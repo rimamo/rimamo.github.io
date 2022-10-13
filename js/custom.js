@@ -26,7 +26,9 @@ $(document).ready(function () {
         });
     });
 
-    $('#skills-toggle').click(function () {
+    let opened = false;
+
+    function toggleSkills() {
         $('#skills').slideToggle(500);
         $('.chart').easyPieChart({
             // barColor: '#9ab817',
@@ -39,6 +41,18 @@ $(document).ready(function () {
             size: 110,
             animate: 2000
         });
+    }
+
+    $('#skills-toggle').click(function () {
+        opened = true;
+        toggleSkills();
+    });
+
+    $('#skills-toggle').hover(function () {
+        if (opened === false) {
+            opened = true;
+            toggleSkills();
+        }
     });
 
     $('#overlay-hide').click(function () {
