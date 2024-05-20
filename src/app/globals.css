@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+/*@import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');*/
+
+@font-face {
+    font-family: 'Marck Script';
+    src: url('/fonts/MarckScript-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     @apply bg-[#3b3348];
+}
+
+.marck-script-regular {
+    font-family: "Marck Script", "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }

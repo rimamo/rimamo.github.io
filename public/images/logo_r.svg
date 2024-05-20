@@ -1,0 +1,4 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="512" cy="512" r="400" fill="black" />
+    <text x="512" y="575" font-family="Marck Script" font-size="480" fill="white" text-anchor="middle" alignment-baseline="middle">R</text>
+</svg>

@@ -10,8 +10,7 @@ export default function ProfileCard() {
         "I ❤️ learning new technologies",
         "I ❤️ solving problems",
         "I ❤️ building things",
-        "I ❤️ teaching",
-        "I ❤️ sharing knowledge",
+        "I ❤️ sharing knowledge"
     ];
 
     const [currentPhrase, setCurrentPhrase] = useState(0);
@@ -35,7 +34,7 @@ export default function ProfileCard() {
                 />
             </div>
             <div className="text-center">
-                <h1 className="text-2xl font-semibold text-gray-900">Ricardo Martinez Montes</h1>
+                <h1 className="text-2xl font-semibold text-gray-900 ">Ricardo Martinez Montes</h1>
                 <p className="text-gray-700">
                     {phrases[currentPhrase].split('❤️')[0]}
                     <FaHeart className="inline text-red-500 mx-1"/>
