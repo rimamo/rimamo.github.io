@@ -25,6 +25,8 @@ export default function RootLayout({
       <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png"/>
       <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png"/>
       <link rel="manifest" href="/site.webmanifest"/>
+      <script defer src="https://odoo.rimamo.dev/im_livechat/loader/2" type="text/javascript"></script>
+      <script defer src="https://odoo.rimamo.dev/im_livechat/assets_embed.js" type="text/javascript"></script>
     </head>
       <body className={inter.className}>
         {children}
