@@ -82,7 +82,7 @@ export default function Home() {
             {/* Profile Context */}
             <section id="contacto" className="py-24 bg-white flex flex-col items-center">
                 <div className="text-center max-w-2xl px-6 mb-12">
-                     <h2 className="text-3xl font-bold tracking-tight text-slate-900 mb-4">Soy el "Cerebro", y delego a mis "Manos"</h2>
+                     <h2 className="text-3xl font-bold tracking-tight text-slate-900 mb-4">Soy el &quot;Cerebro&quot;, y delego a mis &quot;Manos&quot;</h2>
                      <p className="text-slate-600">
                          Si tras auditarte determino que necesitas desarrollo a medida, guío su ejecución a través de mi agencia técnica especializada (<b>friendstech.dev</b>). Calidad técnica total, sin carga operativa para ti.
                      </p>
