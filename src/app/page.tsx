@@ -9,10 +9,10 @@ export default function Home() {
             <header className="relative overflow-hidden bg-slate-50 pt-24 pb-16 sm:pt-32 sm:pb-24 lg:pb-32 px-6">
                 <div className="mx-auto max-w-7xl text-center">
                     <p className="text-sm font-semibold tracking-wide text-blue-600 uppercase mb-4">
-                        Estrategia Tecnológica y Operativa para CEOs y Managers
+                        Liderazgo Tecnológico y Consultoría de Operaciones
                     </p>
-                    <h1 className="mx-auto max-w-4xl font-display text-5xl font-bold tracking-tight text-slate-900 sm:text-7xl">
-                        Deja de perder dinero en software desalineado.
+                    <h1 className="mx-auto max-w-5xl font-display text-5xl font-bold tracking-tight text-slate-900 sm:text-6xl lg:text-7xl">
+                        Tu CTO Fraccional: Estrategia técnica para escalar sin apagar incendios.
                     </h1>
                     <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
                         Transformo el caos operativo y tecnológico de tu empresa en sistemas eficientes, escalables y rentables. Tú te enfocas en el negocio; yo me encargo de la arquitectura, los procesos y el liderazgo técnico.
