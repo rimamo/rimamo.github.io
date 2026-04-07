@@ -18,7 +18,7 @@ export default function Home() {
                         Transformo el caos operativo y tecnológico de tu empresa en sistemas eficientes, escalables y rentables. Tú te enfocas en el negocio; yo me encargo de la arquitectura, los procesos y el liderazgo técnico.
                     </p>
                     <div className="mt-10 flex justify-center gap-x-6">
-                         {/* This button could trigger the bot or go to calendar */}
+                        {/* This button could trigger the bot or go to calendar */}
                         <a href="#contacto" className="rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-slate-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900 transition-all">
                             Hablemos sobre tu empresa &rarr;
                         </a>
@@ -58,7 +58,7 @@ export default function Home() {
                         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">3 formas de devolverle el control y rentabilidad tecnológica a tu empresa</h2>
                         <p className="mt-4 text-lg text-slate-300">No necesitas más líneas de código, necesitas a alguien audite, dirija y eficientice.</p>
                     </div>
-                    
+
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                         <div>
                             <h3 className="text-2xl font-bold mb-2">Auditoría de Ecosistema</h3>
@@ -82,13 +82,13 @@ export default function Home() {
             {/* Profile Context */}
             <section id="contacto" className="py-24 bg-white flex flex-col items-center">
                 <div className="text-center max-w-2xl px-6 mb-12">
-                     <h2 className="text-3xl font-bold tracking-tight text-slate-900 mb-4">Soy el &quot;Cerebro&quot;, y delego a mis &quot;Manos&quot;</h2>
-                     <p className="text-slate-600">
-                         Si tras auditarte determino que necesitas desarrollo a medida, guío su ejecución a través de mi agencia técnica especializada (<b>friendstech.dev</b>). Calidad técnica total, sin carga operativa para ti.
-                     </p>
+                    <h2 className="text-3xl font-bold tracking-tight text-slate-900 mb-4">Dirección estratégica y ejecución sin fricciones</h2>
+                    <p className="text-slate-600">
+                        Si la auditoría determina la necesidad de desarrollar software a medida, la construcción tecnológica se deriva de forma transparente a <a href="https://friendstech.dev" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 hover:text-blue-800 hover:underline transition-colors">friendstech.dev</a>, un equipo técnico especializado. Ejecución de alta calidad técnica, sin sumar cargas operativas a tu empresa.
+                    </p>
                 </div>
                 <div className="scale-90 md:scale-100">
-                     <ProfileCard />
+                    <ProfileCard />
                 </div>
                 <p className="mt-8 text-sm text-slate-500">¿Dudas? Haz clic en la burbuja de chat abajo a la derecha y te guiaré hacia la mejor solución.</p>
             </section>
