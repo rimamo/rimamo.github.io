@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://rimamo.dev"),
@@ -48,8 +45,8 @@ export default function RootLayout({
       
       <link rel="icon" href="/images/favicon.ico"/>
       <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png"/>
-      <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png"/>
-      <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png"/>
+      <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png"/>
+      <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png"/>
       <link rel="manifest" href="/site.webmanifest"/>
       
       {/* Schema.org estructurado para GEO / AI Crawlers */}
@@ -72,7 +69,7 @@ export default function RootLayout({
         }}
       />
     </head>
-      <body className={inter.className}>
+      <body>
         {children}
         <Script
           strategy="afterInteractive"

@@ -2,24 +2,189 @@
 @tailwind components;
 @tailwind utilities;
 
-/*@import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');*/
+/* ==========================================================================
+   Rimamo Design System — tokens + base
+   Fuente: _claude-design-export/rimamo-design-system/project/colors_and_type.css
+   ========================================================================== */
 
-@font-face {
-    font-family: 'Marck Script';
-    src: url('/fonts/MarckScript-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+@font-face { font-family: 'Roboto'; font-weight: 300; font-style: normal;
+  src: url('/fonts/Roboto-Light.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Roboto'; font-weight: 300; font-style: italic;
+  src: url('/fonts/Roboto-LightItalic.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Roboto'; font-weight: 400; font-style: normal;
+  src: url('/fonts/Roboto-Regular.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Roboto'; font-weight: 400; font-style: italic;
+  src: url('/fonts/Roboto-Italic.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Roboto'; font-weight: 500; font-style: normal;
+  src: url('/fonts/Roboto-Medium.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Roboto'; font-weight: 500; font-style: italic;
+  src: url('/fonts/Roboto-MediumItalic.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Roboto'; font-weight: 700; font-style: normal;
+  src: url('/fonts/Roboto-Bold.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Roboto'; font-weight: 700; font-style: italic;
+  src: url('/fonts/Roboto-BoldItalic.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Roboto'; font-weight: 900; font-style: normal;
+  src: url('/fonts/Roboto-Black.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Roboto'; font-weight: 900; font-style: italic;
+  src: url('/fonts/Roboto-BlackItalic.ttf') format('truetype'); font-display: swap; }
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --amber-900: #5A3E0B; --amber-700: #8A6618; --amber-600: #B08224;
+  --amber-500: #E1AA34; --amber-400: #E8BC60; --amber-300: #EFCE8A;
+  --amber-200: #F6E1B6; --amber-100: #FBF1DB;
+
+  --violet-900: #321A44; --violet-700: #5A346F; --violet-600: #6A3D83;
+  --violet-500: #764596; --violet-400: #9267AE; --violet-300: #B18FC6;
+  --violet-200: #D1B9DD; --violet-100: #EBDFF1;
+
+  --green-900: #1F4A2C; --green-700: #3A7A4E; --green-600: #4B9E63;
+  --green-500: #5DB674; --green-400: #7FC591; --green-300: #A3D5AE;
+  --green-200: #C7E5CE; --green-100: #E4F2E8;
+
+  --ink-950: #050506; --ink-900: #0F0F12; --ink-800: #1C1C20;
+  --ink-700: #2E2E34; --ink-600: #4C4C55; --ink-500: #71717A;
+  --ink-400: #9999A1; --ink-300: #C2C2C8; --ink-200: #E2E2E6;
+  --ink-100: #EEEEF0; --ink-50: #F6F6F7;
+
+  --paper-50: #FAFAF7; --paper-100: #F2F1EC; --paper-200: #E8E6DE;
+
+  --font-display: 'Roboto', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-body: 'Roboto', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html {
+  font-family: var(--font-body);
+  color: var(--ink-800);
+  background: var(--paper-50);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
 body {
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    @apply bg-[#3b3348];
+  font-size: 16px;
+  line-height: 1.5;
+  background: var(--paper-50);
+  color: var(--ink-800);
 }
 
-.marck-script-regular {
-    font-family: "Marck Script", "Roboto", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+::selection { background: var(--amber-200); color: var(--ink-900); }
+
+:focus-visible {
+  outline: 2px solid var(--amber-500);
+  outline-offset: 2px;
+}
+
+/* ========================================================================
+   Primitives — rimamo UI kit
+   ======================================================================== */
+
+.container-rmm {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+@media (max-width: 720px) { .container-rmm { padding: 0 20px; } }
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--violet-700);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.eyebrow::before {
+  content: "";
+  width: 22px;
+  height: 2px;
+  background: var(--violet-500);
+  display: inline-block;
+}
+.eyebrow.amber { color: var(--amber-700); }
+.eyebrow.amber::before { background: var(--amber-500); }
+.eyebrow.green { color: var(--green-700); }
+.eyebrow.green::before { background: var(--green-500); }
+
+.btn {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 11px 20px;
+  border-radius: 4px;
+  border: 1px solid var(--ink-900);
+  cursor: pointer;
+  transition: all 180ms var(--ease-out);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  line-height: 1;
+  background: transparent;
+  color: var(--ink-900);
+}
+.btn-primary {
+  background: var(--ink-900);
+  color: var(--paper-50);
+  border-color: var(--ink-900);
+}
+.btn-primary:hover { background: var(--ink-800); transform: translateY(-1px); }
+.btn-outline { background: transparent; color: var(--ink-900); }
+.btn-outline:hover { background: var(--ink-100); }
+.btn-lg { font-size: 15px; padding: 14px 24px; }
+.btn-ghost {
+  background: transparent;
+  color: var(--ink-800);
+  border: none;
+  padding: 8px 10px;
+  font-weight: 500;
+  font-size: 14px;
+}
+.btn-ghost:hover { color: var(--ink-900); }
+.btn-ghost .arrow { transition: transform 180ms; display: inline-block; }
+.btn-ghost:hover .arrow { transform: translateX(3px); }
+
+.section-rmm {
+  padding: 96px 0;
+  border-top: 1px solid var(--ink-200);
+}
+.section-rmm:first-of-type { border-top: 0; }
+.section-rmm.inverse {
+  background: var(--ink-900);
+  color: var(--paper-50);
+  border-top-color: var(--ink-900);
+}
+.section-rmm.inverse h2, .section-rmm.inverse h3 { color: var(--paper-50); }
+.section-rmm.inverse p { color: var(--ink-300); }
+@media (max-width: 720px) { .section-rmm { padding: 64px 0; } }
+
+.wm {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-900);
+  line-height: 1;
+  display: inline-block;
+}
+
+/* Hero grid: 2 columns on desktop, stacked on mobile */
+.rmm-hero-inner {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .rmm-hero-inner { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (max-width: 720px) {
+  .rmm-nav { display: none !important; }
 }
