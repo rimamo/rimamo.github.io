@@ -16,7 +16,7 @@ const VERTICALS: Vertical[] = [
     Icon: Layers,
     tone: "amber",
     title: "Tech Lead fraccional",
-    desc: "Refuerzo técnico senior para tu equipo: arquitectura, decisiones clave y mentoring. Hasta 10 h/semana; si necesitas más, lo vemos en reunión.",
+    desc: "Refuerzo técnico senior para tu equipo: arquitectura, decisiones clave y mentoring. Alcance mensual a medida — lo cerramos en llamada.",
     href: "/servicios/tech-lead-fraccional",
   },
   {

@@ -34,7 +34,7 @@ export default function SiteFooter() {
               lineHeight: 1.55,
             }}
           >
-            RIMAMO SL · Madrid · Servicios tech para equipos que quieren avanzar sin drama.
+            RIMAMO SL · Servicios tech para equipos que quieren avanzar sin drama.
           </p>
         </div>
         <nav

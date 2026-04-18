@@ -208,3 +208,18 @@ body {
 /* Back link en páginas de servicio: flota arriba sin empujar el título */
 .rmm-back-link { transition: color 160ms ease, transform 160ms ease; }
 .rmm-back-link:hover { color: var(--ink-900); transform: translateX(-2px); }
+
+/* Tabla "Por qué fraccional" — responsive: colapsa a una sola columna en móvil */
+@media (max-width: 640px) {
+  .rmm-fractional-table > div {
+    grid-template-columns: 1fr 1fr !important;
+    row-gap: 6px;
+  }
+  .rmm-fractional-table > div > span:first-child {
+    grid-column: 1 / -1;
+    margin-bottom: 4px;
+  }
+  .rmm-fractional-table > div:first-child > span:first-child {
+    margin-bottom: 0;
+  }
+}

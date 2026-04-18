@@ -1,6 +1,7 @@
 import SiteHeader from "@/components/SiteHeader";
 import Hero from "@/components/Hero";
 import VerticalsGrid from "@/components/VerticalsGrid";
+import WhyFractional from "@/components/WhyFractional";
 import AboutStrip from "@/components/AboutStrip";
 import ContactBlock from "@/components/ContactBlock";
 import SiteFooter from "@/components/SiteFooter";
@@ -13,6 +14,7 @@ export default function Home() {
       <main>
         <Hero />
         <VerticalsGrid />
+        <WhyFractional />
         <AboutStrip />
         <ContactBlock />
       </main>
