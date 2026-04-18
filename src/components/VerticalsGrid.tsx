@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Layers, Sparkles, CodeXml, PenTool, LucideIcon } from "lucide-react";
 
 type Tone = "amber" | "violet" | "green" | "ink";
@@ -8,7 +9,7 @@ type Vertical = {
   tone: Tone;
   title: string;
   desc: string;
-  cta: string;
+  href: string;
 };
 
 const VERTICALS: Vertical[] = [
@@ -18,7 +19,7 @@ const VERTICALS: Vertical[] = [
     tone: "amber",
     title: "Tech Lead fraccional",
     desc: "Refuerzo técnico senior para tu equipo: arquitectura, decisiones clave y mentoring. Hasta 10 h/semana; si necesitas más, lo vemos en reunión.",
-    cta: "Reservar llamada",
+    href: "/servicios/tech-lead-fraccional",
   },
   {
     Icon: Sparkles,
@@ -26,7 +27,7 @@ const VERTICALS: Vertical[] = [
     tone: "violet",
     title: "Automatizaciones & IA",
     desc: "Integraciones que ahorran horas reales, no demos. Flujos internos, pipelines de datos y agentes con MCP aplicados a tu operativa.",
-    cta: "Reservar llamada",
+    href: "/servicios/automatizaciones-ia",
   },
   {
     Icon: CodeXml,
@@ -34,15 +35,15 @@ const VERTICALS: Vertical[] = [
     tone: "green",
     title: "Prototipado",
     desc: "MVP funcional en 4–6 semanas con Next.js y TypeScript. Un único developer senior al frente. Ideal para validar una idea antes de escalar.",
-    cta: "Reservar llamada",
+    href: "/servicios/prototipado",
   },
   {
     Icon: PenTool,
     tag: "P1",
     tone: "ink",
     title: "Diseño & UX",
-    desc: "Wireframes, sistemas de diseño y pasadas visuales. Todo facturado desde Rimamo.",
-    cta: "Reservar llamada",
+    desc: "Wireframes, sistemas de diseño y pasadas visuales. Todo facturado desde RIMAMO SL.",
+    href: "/servicios/diseno-ux",
   },
 ];
 
@@ -53,10 +54,12 @@ const TONES: Record<Tone, { rule: string; pillBg: string; pillFg: string; iconCo
   ink: { rule: "var(--ink-900)", pillBg: "var(--ink-900)", pillFg: "var(--paper-50)", iconColor: "var(--ink-900)" },
 };
 
-function VerticalCard({ Icon, tag, tone, title, desc, cta }: Vertical) {
+function VerticalCard({ Icon, tag, tone, title, desc, href }: Vertical) {
   const t = TONES[tone];
   return (
-    <article
+    <Link
+      href={href}
+      className="rmm-vertical-card"
       style={{
         padding: "28px 26px 26px",
         borderRight: "1px solid var(--ink-200)",
@@ -67,6 +70,8 @@ function VerticalCard({ Icon, tag, tone, title, desc, cta }: Vertical) {
         transition: "background 200ms",
         boxShadow: `inset 3px 0 0 0 ${t.rule}`,
         background: "#fff",
+        textDecoration: "none",
+        color: "inherit",
       }}
     >
       <header style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
@@ -99,10 +104,10 @@ function VerticalCard({ Icon, tag, tone, title, desc, cta }: Vertical) {
         {title}
       </h3>
       <p style={{ fontSize: 14, lineHeight: 1.55, color: "var(--ink-700)", margin: 0, flex: 1 }}>{desc}</p>
-      <a href="#contacto" className="btn btn-ghost" style={{ padding: "6px 0" }}>
-        {cta} <span className="arrow">→</span>
-      </a>
-    </article>
+      <span className="btn btn-ghost" style={{ padding: "6px 0" }}>
+        Ver más <span className="arrow">→</span>
+      </span>
+    </Link>
   );
 }
 

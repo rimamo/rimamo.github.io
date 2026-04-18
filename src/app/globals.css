@@ -175,6 +175,9 @@ body {
   display: inline-block;
 }
 
+/* Dropdown menu item hover */
+.rmm-menu-item:hover { background: var(--paper-100); color: var(--ink-900) !important; }
+
 /* Hero grid: 2 columns on desktop, stacked on mobile */
 .rmm-hero-inner {
   display: grid;
