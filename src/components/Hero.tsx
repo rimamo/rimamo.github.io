@@ -49,7 +49,7 @@ export default function Hero({ ctaHref = "#contacto" }: Props) {
     >
       <div className="container-rmm rmm-hero-inner">
         <div>
-          <div className="eyebrow">TECH LEAD · CTO FRACCIONAL</div>
+          <div className="eyebrow">RICARDO MARTÍNEZ · CTO FRACCIONAL</div>
           <h1
             style={{
               fontFamily: "var(--font-display)",
@@ -75,15 +75,16 @@ export default function Hero({ ctaHref = "#contacto" }: Props) {
               margin: "0 0 32px",
             }}
           >
-            16 años construyendo software. Arquitectura, decisiones técnicas
-            y gestión de equipo en bloques mensuales. Factura desde Rimamo SL.
+            16 años construyendo software. Me sumo a tu equipo como refuerzo
+            técnico senior sin contrato laboral: arquitectura, decisiones
+            clave y guía al equipo existente.
           </p>
           <div style={{ display: "flex", gap: 16, alignItems: "center", marginBottom: 40, flexWrap: "wrap" }}>
             <a href={ctaHref} className="btn btn-primary btn-lg">
-              Hablemos <span>→</span>
+              Reservar llamada <span>→</span>
             </a>
-            <a href="#pricing" className="btn btn-ghost">
-              Ver paquetes <span className="arrow">→</span>
+            <a href="#verticales" className="btn btn-ghost">
+              Cómo trabajo <span className="arrow">→</span>
             </a>
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 13, color: "var(--ink-600)" }}>
@@ -98,7 +99,7 @@ export default function Hero({ ctaHref = "#contacto" }: Props) {
               }}
               aria-hidden
             />
-            <span>Disponible · 20 h/mes libres este trimestre</span>
+            <span>Disponible · hasta 10 h/semana</span>
           </div>
         </div>
 
@@ -125,7 +126,7 @@ export default function Hero({ ctaHref = "#contacto" }: Props) {
           </div>
           <div>
             <Line k="Empresa" v="Rimamo SL" />
-            <Line k="Clientes activos" v="1 retainer" />
+            <Line k="Capacidad" v="10 h/semana" />
             <Line k="Stack actual" v="Next.js · Payload · Vercel" />
             <Line k="Localización" v="Madrid · remoto" />
             <Line k="Idiomas" v="Castellano · English" />

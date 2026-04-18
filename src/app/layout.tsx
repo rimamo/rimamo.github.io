@@ -5,16 +5,16 @@ import Script from "next/script";
 export const metadata: Metadata = {
   metadataBase: new URL("https://rimamo.dev"),
   title: {
-    default: "Ricardo Martínez | Estrategia Tecnológica y CTO Fraccional",
+    default: "Ricardo Martínez | Tech Lead a horas · CTO fraccional",
     template: "%s | Ricardo Martínez"
   },
-  description: "Transformo el caos operativo y tecnológico de tu empresa en sistemas eficientes, escalables y rentables. Auditoría Tech, Consultoría de Operaciones y CTO Fraccional.",
-  keywords: ["CTO", "CTO Fraccional", "Consultoria Tecnologica", "Estrategia de Software", "Automatizacion y Operaciones", "Auditoria SaaS", "Ricardo Martinez"],
+  description: "Tech Lead senior a horas, sin contratarme a jornada completa. 16 años construyendo software: arquitectura, decisiones técnicas y refuerzo a tu equipo. Factura desde Rimamo SL.",
+  keywords: ["CTO fraccional", "Tech Lead a horas", "Consultoría tecnológica", "Automatizaciones", "IA operativa", "Ricardo Martinez", "Rimamo"],
   openGraph: {
-    title: "Ricardo Martínez | Especialista en Eficiencia Tecnológica",
-    description: "Deja de perder dinero en software desalineado. Transformo tu infraestructura y operaciones en sistemas altamente rentables.",
+    title: "Ricardo Martínez | Tech Lead a horas",
+    description: "Refuerzo técnico senior para tu equipo sin contrato laboral. Arquitectura, decisiones clave y automatizaciones reales.",
     url: "https://rimamo.dev",
-    siteName: "Ricardo Martínez - Estrategia Tecnológica",
+    siteName: "Rimamo — Ricardo Martínez",
     locale: "es_ES",
     type: "website",
   },
@@ -58,9 +58,9 @@ export default function RootLayout({
             "@type": ["Person", "ProfessionalService"],
             "name": "Ricardo Martínez",
             "url": "https://rimamo.dev",
-            "jobTitle": "Consultor Tecnológico y CTO Fraccional",
-            "description": "Estrategia Tecnológica de Alto Nivel para CEOs y Managers. Auditoría de Ecosistemas y Eficiencia de Operaciones.",
-            "knowsAbout": ["Software Architecture", "CTO as a Service", "Business Operations", "Technical Leadership", "SaaS Cost Reduction", "Automation"],
+            "jobTitle": "Tech Lead a horas · CTO fraccional",
+            "description": "Tech Lead senior a horas. Refuerzo técnico para equipos que necesitan arquitectura, decisiones clave y automatizaciones sin contratar a jornada completa.",
+            "knowsAbout": ["Software Architecture", "Fractional CTO", "Technical Leadership", "Automation", "AI Integration", "MCP Agents", "Next.js", "TypeScript"],
             "sameAs": [
               "https://linkedin.com/in/ricardomartinezmontes",
               "https://github.com/rimamo"
