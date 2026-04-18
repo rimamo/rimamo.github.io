@@ -128,7 +128,7 @@ export default function VerticalsGrid() {
             Una sola factura.
           </h2>
           <p style={{ fontSize: 16, lineHeight: 1.55, color: "var(--ink-600)", margin: 0 }}>
-            Todo lo contratas a Rimamo SL. Si no encaja, te lo digo antes de empezar.
+            Todo lo contratas a RIMAMO SL. Si no encaja, te lo digo antes de empezar.
           </p>
         </header>
         <div

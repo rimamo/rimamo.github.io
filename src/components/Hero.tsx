@@ -1,40 +1,4 @@
-type LineProps = { k: string; v: string; accent?: boolean };
-
-function Line({ k, v, accent }: LineProps) {
-  return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "baseline",
-        gap: 16,
-        padding: "11px 0",
-        borderTop: "1px solid var(--ink-200)",
-        fontSize: 13,
-      }}
-    >
-      <span
-        style={{
-          color: "var(--ink-500)",
-          fontFamily: "var(--font-mono)",
-          fontSize: 11,
-          letterSpacing: "0.04em",
-          textTransform: "uppercase",
-        }}
-      >
-        {k}
-      </span>
-      <span
-        style={{
-          color: accent ? "var(--amber-700)" : "var(--ink-900)",
-          fontWeight: accent ? 700 : 500,
-        }}
-      >
-        {v}
-      </span>
-    </div>
-  );
-}
+import Image from "next/image";
 
 type Props = {
   ctaHref?: string;
@@ -103,34 +67,78 @@ export default function Hero({ ctaHref = "#contacto" }: Props) {
           </div>
         </div>
 
-        <aside
-          style={{
-            background: "#fff",
-            border: "1px solid var(--ink-200)",
-            borderRadius: 8,
-            padding: "18px 22px 22px",
-            marginTop: 24,
-          }}
-        >
+        <aside style={{ marginTop: 24 }}>
           <div
             style={{
-              fontFamily: "var(--font-mono)",
-              fontSize: 10,
-              letterSpacing: "0.12em",
-              textTransform: "uppercase",
-              color: "var(--ink-500)",
-              marginBottom: 10,
+              border: "1px solid var(--ink-200)",
+              padding: 8,
+              background: "#fff",
+              lineHeight: 0,
             }}
           >
-            AHORA MISMO
+            <Image
+              src="/images/ricardo_martinez_montes_2024.jpg"
+              alt="Ricardo Martínez"
+              width={520}
+              height={650}
+              priority
+              style={{
+                display: "block",
+                width: "100%",
+                height: "auto",
+                filter: "grayscale(100%)",
+              }}
+            />
           </div>
-          <div>
-            <Line k="Empresa" v="Rimamo SL" />
-            <Line k="Capacidad" v="10 h/semana" />
-            <Line k="Stack actual" v="Next.js · Payload · Vercel" />
-            <Line k="Localización" v="Madrid · remoto" />
-            <Line k="Idiomas" v="Castellano · English" />
-            <Line k="Próxima vacante" v="Mayo 2026" accent />
+          <div
+            style={{
+              marginTop: 18,
+              fontFamily: "var(--font-display)",
+              fontSize: 18,
+              fontWeight: 700,
+              letterSpacing: "0.02em",
+              color: "var(--ink-900)",
+              textTransform: "uppercase",
+            }}
+          >
+            Ricardo Martínez
+          </div>
+          <div
+            style={{
+              marginTop: 6,
+              fontSize: 14,
+              lineHeight: 1.5,
+              color: "var(--ink-600)",
+            }}
+          >
+            Orquestador técnico · 16 años · IA aplicada
+          </div>
+          <div
+            style={{
+              marginTop: 14,
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              padding: "6px 10px",
+              borderRadius: 999,
+              background: "var(--green-100)",
+              color: "var(--green-900)",
+              fontSize: 12,
+              fontWeight: 600,
+              letterSpacing: "0.02em",
+            }}
+          >
+            <span
+              style={{
+                width: 7,
+                height: 7,
+                borderRadius: "50%",
+                background: "var(--green-500)",
+                boxShadow: "0 0 0 3px rgba(93,182,116,0.25)",
+              }}
+              aria-hidden
+            />
+            Próxima vacante · Mayo 2026
           </div>
         </aside>
       </div>

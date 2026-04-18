@@ -45,7 +45,7 @@ export default function ContactBlock() {
             hola@rimamo.dev <span>→</span>
           </a>
           <a
-            href="https://cal.com/ricardomartinez"
+            href="https://cal.com/rimamo/30min"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-lg"

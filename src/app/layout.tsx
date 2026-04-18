@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     default: "Ricardo Martínez | Tech Lead a horas · CTO fraccional",
     template: "%s | Ricardo Martínez"
   },
-  description: "Tech Lead senior a horas, sin contratarme a jornada completa. 16 años construyendo software: arquitectura, decisiones técnicas y refuerzo a tu equipo. Factura desde Rimamo SL.",
+  description: "Tech Lead senior a horas, sin contratarme a jornada completa. 16 años construyendo software: arquitectura, decisiones técnicas y refuerzo a tu equipo. Factura desde RIMAMO SL.",
   keywords: ["CTO fraccional", "Tech Lead a horas", "Consultoría tecnológica", "Automatizaciones", "IA operativa", "Ricardo Martinez", "Rimamo"],
   openGraph: {
     title: "Ricardo Martínez | Tech Lead a horas",
