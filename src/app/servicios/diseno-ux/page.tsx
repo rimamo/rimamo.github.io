@@ -8,7 +8,7 @@ import OdooLivechat from "@/components/OdooLivechat";
 export const metadata: Metadata = {
   title: "Diseño & UX",
   description:
-    "Wireframes, sistemas de diseño y pasadas visuales. Todo contratado y facturado desde RIMAMO SL.",
+    "Wireframes, sistemas de diseño y pasadas visuales sobre producto real.",
 };
 
 const ENTREGABLES = [
@@ -30,8 +30,7 @@ export default function DisenoUXPage() {
           lead={
             <>
               Wireframes, sistemas de diseño y pasadas visuales sobre producto
-              real. Se contrata y factura desde RIMAMO SL, con el mismo rigor
-              que el resto de servicios.
+              real.
             </>
           }
         />

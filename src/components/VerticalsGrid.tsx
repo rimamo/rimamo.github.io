@@ -5,7 +5,6 @@ type Tone = "amber" | "violet" | "green" | "ink";
 
 type Vertical = {
   Icon: LucideIcon;
-  tag: "P0" | "P1";
   tone: Tone;
   title: string;
   desc: string;
@@ -15,7 +14,6 @@ type Vertical = {
 const VERTICALS: Vertical[] = [
   {
     Icon: Layers,
-    tag: "P0",
     tone: "amber",
     title: "Tech Lead fraccional",
     desc: "Refuerzo técnico senior para tu equipo: arquitectura, decisiones clave y mentoring. Hasta 10 h/semana; si necesitas más, lo vemos en reunión.",
@@ -23,15 +21,13 @@ const VERTICALS: Vertical[] = [
   },
   {
     Icon: Sparkles,
-    tag: "P0",
     tone: "violet",
-    title: "Automatizaciones & IA",
+    title: "Automatización & IA",
     desc: "Integraciones que ahorran horas reales, no demos. Flujos internos, pipelines de datos y agentes con MCP aplicados a tu operativa.",
     href: "/servicios/automatizaciones-ia",
   },
   {
     Icon: CodeXml,
-    tag: "P1",
     tone: "green",
     title: "Prototipado",
     desc: "MVP funcional en 4–6 semanas con Next.js y TypeScript. Un único developer senior al frente. Ideal para validar una idea antes de escalar.",
@@ -39,7 +35,6 @@ const VERTICALS: Vertical[] = [
   },
   {
     Icon: PenTool,
-    tag: "P1",
     tone: "ink",
     title: "Diseño & UX",
     desc: "Wireframes, sistemas de diseño y pasadas visuales. Todo facturado desde RIMAMO SL.",
@@ -47,14 +42,14 @@ const VERTICALS: Vertical[] = [
   },
 ];
 
-const TONES: Record<Tone, { rule: string; pillBg: string; pillFg: string; iconColor: string }> = {
-  amber: { rule: "var(--amber-500)", pillBg: "var(--amber-500)", pillFg: "var(--ink-900)", iconColor: "var(--amber-700)" },
-  violet: { rule: "var(--violet-500)", pillBg: "var(--violet-500)", pillFg: "#fff", iconColor: "var(--violet-700)" },
-  green: { rule: "var(--green-500)", pillBg: "var(--green-500)", pillFg: "var(--ink-900)", iconColor: "var(--green-700)" },
-  ink: { rule: "var(--ink-900)", pillBg: "var(--ink-900)", pillFg: "var(--paper-50)", iconColor: "var(--ink-900)" },
+const TONES: Record<Tone, { rule: string; iconColor: string }> = {
+  amber: { rule: "var(--amber-500)", iconColor: "var(--amber-700)" },
+  violet: { rule: "var(--violet-500)", iconColor: "var(--violet-700)" },
+  green: { rule: "var(--green-500)", iconColor: "var(--green-700)" },
+  ink: { rule: "var(--ink-900)", iconColor: "var(--ink-900)" },
 };
 
-function VerticalCard({ Icon, tag, tone, title, desc, href }: Vertical) {
+function VerticalCard({ Icon, tone, title, desc, href }: Vertical) {
   const t = TONES[tone];
   return (
     <Link
@@ -74,22 +69,8 @@ function VerticalCard({ Icon, tag, tone, title, desc, href }: Vertical) {
         color: "inherit",
       }}
     >
-      <header style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+      <header style={{ display: "flex", alignItems: "center" }}>
         <Icon size={22} strokeWidth={1.5} color={t.iconColor} />
-        <span
-          style={{
-            fontFamily: "var(--font-mono)",
-            fontSize: 10,
-            fontWeight: 700,
-            letterSpacing: "0.06em",
-            padding: "3px 8px",
-            borderRadius: 2,
-            background: t.pillBg,
-            color: t.pillFg,
-          }}
-        >
-          {tag}
-        </span>
       </header>
       <h3
         style={{

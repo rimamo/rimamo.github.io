@@ -13,19 +13,25 @@ export default function ServiceHero({ eyebrow, title, lead, tone = "amber" }: Pr
       className="section-rmm"
       style={{ padding: "72px 0 80px", borderTop: 0 }}
     >
-      <div className="container-rmm" style={{ maxWidth: 880 }}>
+      <div className="container-rmm" style={{ maxWidth: 880, position: "relative" }}>
         <Link
           href="/"
+          className="rmm-back-link"
           style={{
+            position: "absolute",
+            top: -36,
+            left: 0,
             fontSize: 13,
             color: "var(--ink-600)",
             textDecoration: "none",
-            borderBottom: "1px solid var(--ink-300)",
-            display: "inline-block",
-            marginBottom: 40,
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 6,
+            padding: "4px 0",
           }}
         >
-          ← Volver a inicio
+          <span aria-hidden>←</span>
+          <span>Volver a inicio</span>
         </Link>
         <div className={`eyebrow ${tone}`}>{eyebrow}</div>
         <h1

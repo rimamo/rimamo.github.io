@@ -2,16 +2,24 @@
 
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
+import { Layers, Sparkles, CodeXml, PenTool, LucideIcon } from "lucide-react";
 
 type Props = {
   ctaHref?: string;
 };
 
-const SERVICIOS = [
-  { slug: "tech-lead-fraccional", label: "Tech Lead fraccional", tag: "P0" },
-  { slug: "automatizaciones-ia", label: "Automatizaciones & IA", tag: "P0" },
-  { slug: "prototipado", label: "Prototipado", tag: "P1" },
-  { slug: "diseno-ux", label: "Diseño & UX", tag: "P1" },
+type Servicio = {
+  slug: string;
+  label: string;
+  Icon: LucideIcon;
+  color: string;
+};
+
+const SERVICIOS: Servicio[] = [
+  { slug: "tech-lead-fraccional", label: "Tech Lead fraccional", Icon: Layers, color: "var(--amber-700)" },
+  { slug: "automatizaciones-ia", label: "Automatización & IA", Icon: Sparkles, color: "var(--violet-700)" },
+  { slug: "prototipado", label: "Prototipado", Icon: CodeXml, color: "var(--green-700)" },
+  { slug: "diseno-ux", label: "Diseño & UX", Icon: PenTool, color: "var(--ink-900)" },
 ];
 
 export default function SiteHeader({ ctaHref = "https://cal.com/rimamo/30min" }: Props) {
@@ -131,8 +139,8 @@ export default function SiteHeader({ ctaHref = "https://cal.com/rimamo/30min" }:
                     onClick={() => setOpen(false)}
                     style={{
                       display: "flex",
-                      justifyContent: "space-between",
                       alignItems: "center",
+                      gap: 12,
                       padding: "10px 12px",
                       borderRadius: 4,
                       textDecoration: "none",
@@ -143,17 +151,8 @@ export default function SiteHeader({ ctaHref = "https://cal.com/rimamo/30min" }:
                     }}
                     className="rmm-menu-item"
                   >
+                    <s.Icon size={18} strokeWidth={1.5} color={s.color} />
                     <span>{s.label}</span>
-                    <span
-                      style={{
-                        fontFamily: "var(--font-mono)",
-                        fontSize: 10,
-                        fontWeight: 700,
-                        color: "var(--ink-500)",
-                      }}
-                    >
-                      {s.tag}
-                    </span>
                   </Link>
                 ))}
               </div>

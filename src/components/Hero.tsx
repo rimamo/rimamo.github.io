@@ -1,10 +1,29 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useState } from "react";
+
+const ROTATING: { label: string; color: string }[] = [
+  { label: "Tech Lead a horas", color: "var(--amber-700)" },
+  { label: "Automatización & IA", color: "var(--violet-700)" },
+  { label: "Prototipado MVP", color: "var(--green-700)" },
+  { label: "Diseño & UX", color: "var(--ink-900)" },
+];
 
 type Props = {
   ctaHref?: string;
 };
 
 export default function Hero({ ctaHref = "#contacto" }: Props) {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setIndex((i) => (i + 1) % ROTATING.length);
+    }, 2600);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section
       id="top"
@@ -13,20 +32,37 @@ export default function Hero({ ctaHref = "#contacto" }: Props) {
     >
       <div className="container-rmm rmm-hero-inner">
         <div>
-          <div className="eyebrow">RICARDO MARTÍNEZ · CTO FRACCIONAL</div>
+          <div className="eyebrow">RICARDO MARTÍNEZ · TECH LEAD FRACCIONAL</div>
           <h1
             style={{
               fontFamily: "var(--font-display)",
-              fontSize: "clamp(40px, 5.6vw, 68px)",
+              fontSize: "clamp(34px, 4.8vw, 56px)",
               fontWeight: 700,
               letterSpacing: "-0.025em",
-              lineHeight: 1.05,
+              lineHeight: 1.08,
               color: "var(--ink-900)",
               margin: "20px 0 26px",
             }}
           >
-            Tech Lead a horas,
-            <br />
+            <span
+              style={{
+                display: "block",
+                whiteSpace: "nowrap",
+                minHeight: "1.1em",
+              }}
+            >
+              <span
+                key={ROTATING[index].label}
+                className="rmm-rotating"
+                style={{
+                  display: "inline-block",
+                  color: ROTATING[index].color,
+                }}
+              >
+                {ROTATING[index].label}
+              </span>
+              ,
+            </span>
             sin contratarme
             <br />a jornada completa.
           </h1>
@@ -43,27 +79,13 @@ export default function Hero({ ctaHref = "#contacto" }: Props) {
             técnico senior sin contrato laboral: arquitectura, decisiones
             clave y guía al equipo existente.
           </p>
-          <div style={{ display: "flex", gap: 16, alignItems: "center", marginBottom: 40, flexWrap: "wrap" }}>
+          <div style={{ display: "flex", gap: 16, alignItems: "center", flexWrap: "wrap" }}>
             <a href={ctaHref} className="btn btn-primary btn-lg">
               Reservar llamada <span>→</span>
             </a>
             <a href="#verticales" className="btn btn-ghost">
               Cómo trabajo <span className="arrow">→</span>
             </a>
-          </div>
-          <div style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 13, color: "var(--ink-600)" }}>
-            <span
-              style={{
-                width: 8,
-                height: 8,
-                borderRadius: "50%",
-                background: "var(--green-500)",
-                display: "inline-block",
-                boxShadow: "0 0 0 4px var(--green-100)",
-              }}
-              aria-hidden
-            />
-            <span>Disponible · hasta 10 h/semana</span>
           </div>
         </div>
 
@@ -101,7 +123,7 @@ export default function Hero({ ctaHref = "#contacto" }: Props) {
               textTransform: "uppercase",
             }}
           >
-            Ricardo Martínez
+            Ricardo Martínez Montes
           </div>
           <div
             style={{
@@ -111,34 +133,7 @@ export default function Hero({ ctaHref = "#contacto" }: Props) {
               color: "var(--ink-600)",
             }}
           >
-            Orquestador técnico · 16 años · IA aplicada
-          </div>
-          <div
-            style={{
-              marginTop: 14,
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 8,
-              padding: "6px 10px",
-              borderRadius: 999,
-              background: "var(--green-100)",
-              color: "var(--green-900)",
-              fontSize: 12,
-              fontWeight: 600,
-              letterSpacing: "0.02em",
-            }}
-          >
-            <span
-              style={{
-                width: 7,
-                height: 7,
-                borderRadius: "50%",
-                background: "var(--green-500)",
-                boxShadow: "0 0 0 3px rgba(93,182,116,0.25)",
-              }}
-              aria-hidden
-            />
-            Próxima vacante · Mayo 2026
+            Más de 16 años de experiencia técnica potenciada con IA.
           </div>
         </aside>
       </div>
