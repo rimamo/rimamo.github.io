@@ -1,0 +1,138 @@
+import Link from "next/link";
+import { Layers, Sparkles, CodeXml, PenTool, LucideIcon } from "lucide-react";
+
+type Tone = "amber" | "violet" | "green" | "ink";
+
+type Vertical = {
+  Icon: LucideIcon;
+  tone: Tone;
+  title: string;
+  desc: string;
+  href: string;
+};
+
+const VERTICALS: Vertical[] = [
+  {
+    Icon: Layers,
+    tone: "amber",
+    title: "Tech Lead fraccional",
+    desc: "Refuerzo técnico senior para tu equipo: arquitectura, decisiones clave y mentoring. Alcance mensual a medida — lo cerramos en llamada.",
+    href: "/servicios/tech-lead-fraccional",
+  },
+  {
+    Icon: Sparkles,
+    tone: "violet",
+    title: "Automatización & IA",
+    desc: "Integraciones que ahorran horas reales, no demos. Flujos internos, pipelines de datos y agentes con MCP aplicados a tu operativa.",
+    href: "/servicios/automatizaciones-ia",
+  },
+  {
+    Icon: CodeXml,
+    tone: "green",
+    title: "Prototipado",
+    desc: "MVP funcional en 4–6 semanas con Next.js y TypeScript. Un único developer senior al frente. Ideal para validar una idea antes de escalar.",
+    href: "/servicios/prototipado",
+  },
+  {
+    Icon: PenTool,
+    tone: "ink",
+    title: "Diseño & UX",
+    desc: "Wireframes, sistemas de diseño y pasadas visuales. Todo facturado desde RIMAMO SL.",
+    href: "/servicios/diseno-ux",
+  },
+];
+
+const TONES: Record<Tone, { rule: string; iconColor: string }> = {
+  amber: { rule: "var(--amber-500)", iconColor: "var(--amber-700)" },
+  violet: { rule: "var(--violet-500)", iconColor: "var(--violet-700)" },
+  green: { rule: "var(--green-500)", iconColor: "var(--green-700)" },
+  ink: { rule: "var(--ink-900)", iconColor: "var(--ink-900)" },
+};
+
+function VerticalCard({ Icon, tone, title, desc, href }: Vertical) {
+  const t = TONES[tone];
+  return (
+    <Link
+      href={href}
+      className="rmm-vertical-card"
+      style={{
+        padding: "28px 26px 26px",
+        borderRight: "1px solid var(--ink-200)",
+        borderBottom: "1px solid var(--ink-200)",
+        display: "flex",
+        flexDirection: "column",
+        gap: 14,
+        transition: "background 200ms",
+        boxShadow: `inset 3px 0 0 0 ${t.rule}`,
+        background: "#fff",
+        textDecoration: "none",
+        color: "inherit",
+      }}
+    >
+      <header style={{ display: "flex", alignItems: "center" }}>
+        <Icon size={22} strokeWidth={1.5} color={t.iconColor} />
+      </header>
+      <h3
+        style={{
+          fontFamily: "var(--font-display)",
+          fontSize: 22,
+          fontWeight: 700,
+          letterSpacing: "-0.015em",
+          color: "var(--ink-900)",
+          margin: 0,
+        }}
+      >
+        {title}
+      </h3>
+      <p style={{ fontSize: 14, lineHeight: 1.55, color: "var(--ink-700)", margin: 0, flex: 1 }}>{desc}</p>
+      <span className="btn btn-ghost" style={{ padding: "6px 0" }}>
+        Ver más <span className="arrow">→</span>
+      </span>
+    </Link>
+  );
+}
+
+export default function VerticalsGrid() {
+  return (
+    <section id="verticales" className="section-rmm">
+      <div className="container-rmm">
+        <header style={{ maxWidth: 720, marginBottom: 56 }}>
+          <div className="eyebrow">VERTICALES</div>
+          <h2
+            style={{
+              fontFamily: "var(--font-display)",
+              fontSize: "clamp(30px, 3.6vw, 44px)",
+              fontWeight: 700,
+              letterSpacing: "-0.02em",
+              lineHeight: 1.1,
+              color: "var(--ink-900)",
+              margin: "16px 0 14px",
+            }}
+          >
+            Cuatro formas de trabajar.
+            <br />
+            Una sola factura.
+          </h2>
+          <p style={{ fontSize: 16, lineHeight: 1.55, color: "var(--ink-600)", margin: 0 }}>
+            Todo lo contratas a RIMAMO SL. Si no encaja, te lo digo antes de empezar.
+          </p>
+        </header>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+            gap: 0,
+            border: "1px solid var(--ink-200)",
+            borderRadius: 8,
+            background: "#fff",
+            overflow: "hidden",
+          }}
+        >
+          {VERTICALS.map((v) => (
+            <VerticalCard key={v.title} {...v} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
