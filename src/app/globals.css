@@ -190,6 +190,8 @@ body {
 }
 @media (max-width: 720px) {
   .rmm-nav { display: none !important; }
+  .rmm-cta-desktop { display: none !important; }
+  .rmm-burger { display: inline-flex !important; }
 }
 
 /* Rotating hero word */
@@ -208,6 +210,16 @@ body {
 /* Back link en páginas de servicio: flota arriba sin empujar el título */
 .rmm-back-link { transition: color 160ms ease, transform 160ms ease; }
 .rmm-back-link:hover { color: var(--ink-900); transform: translateX(-2px); }
+
+/* FAQ — details/summary sin marcador nativo + rotación del icono */
+.rmm-faq-item > summary::-webkit-details-marker { display: none; }
+.rmm-faq-item > summary { outline: none; }
+.rmm-faq-item > summary:hover { background: var(--paper-100); }
+.rmm-faq-item[open] > summary { background: var(--paper-100); }
+.rmm-faq-item[open] > summary .rmm-faq-icon {
+  transform: rotate(45deg);
+  color: var(--ink-900);
+}
 
 /* Tabla "Por qué fraccional" — responsive: colapsa a una sola columna en móvil */
 @media (max-width: 640px) {
