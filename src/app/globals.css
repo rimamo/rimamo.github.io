@@ -190,6 +190,8 @@ body {
 }
 @media (max-width: 720px) {
   .rmm-nav { display: none !important; }
+  .rmm-cta-desktop { display: none !important; }
+  .rmm-burger { display: inline-flex !important; }
 }
 
 /* Rotating hero word */
